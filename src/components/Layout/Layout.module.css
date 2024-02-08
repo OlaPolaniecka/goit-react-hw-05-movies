@@ -1,0 +1,30 @@
+.menu {
+  top: 0;
+  left: 0;
+  position: sticky;
+  z-index: 1100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  color: #fff;
+  background-color: #611877;
+}
+
+.menu_list {
+  list-style: none;
+  display: flex;
+  gap: 37px;
+}
+
+.menu_title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu_title:active {
+  color: #3831c3;
+}
