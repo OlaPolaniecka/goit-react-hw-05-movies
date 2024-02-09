@@ -17,7 +17,7 @@ export default function MovieDetails() {
 
   return (
     <>
-      <div className={css.movie_container}>
+      <div>
         <h1 className={css.movie_title}>{movieDetails.title}</h1>
         <p className={css.movie_tagline}>{movieDetails.tagline}</p>
         <img
@@ -30,13 +30,9 @@ export default function MovieDetails() {
         <p>{movieDetails.overview}</p>
         <p>Release date: {movieDetails.release_date}</p>
         <p>User score: {movieDetails.vote_average}</p>
-        <Link to={'cast'}>
-          <strong>Cast</strong>
-        </Link>
+        <Link to={'cast'}>Cast</Link>
         &nbsp;&nbsp;|&nbsp;&nbsp;
-        <Link to={'reviews'}>
-          <strong>Reviews</strong>
-        </Link>
+        <Link to={'reviews'}>Reviews</Link>
         <Outlet />
       </div>
     </>
