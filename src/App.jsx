@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Routes, Route } from 'react-router-dom';
 import { Suspense } from 'react';
 import Layout from 'components/Layout/Layout';
 
@@ -11,20 +11,23 @@ const Reviews = lazy(() => import('./components/Reviews/Reviews'));
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <Layout>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Route exact path="/" element={Home} />
-            <Route exact path="/movies" element={Movies} />
-            <Route exact path="/movies/:movieId" element={MovieDetails} />
-            <Route exact path="/movies/:movieId/cast" element={Cast} />
-            <Route exact path="/movies/:movieId/reviews" component={Reviews} />
-            <Route path="*" />
-          </Suspense>
-        </Layout>
-      </div>
-    </Router>
+    <div>
+      <Layout />
+      <Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/movies" element={<Movies />} />
+          <Route exact path="/movies/:movieId" element={<MovieDetails />} />
+          <Route exact path="/movies/:movieId/cast" element={<Cast />} />
+          <Route
+            exact
+            path="/movies/:movieId/reviews"
+            component={<Reviews />}
+          />
+          <Route path="*" />
+        </Suspense>
+      </Routes>
+    </div>
   );
 };
 
