@@ -19,11 +19,7 @@ const App = () => {
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path="/movies/:movieId" element={<MovieDetails />} />
           <Route exact path="/movies/:movieId/cast" element={<Cast />} />
-          <Route
-            exact
-            path="/movies/:movieId/reviews"
-            component={<Reviews />}
-          />
+          <Route exact path="/movies/:movieId/reviews" element={<Reviews />} />
           <Route path="*" />
         </Routes>
       </Suspense>

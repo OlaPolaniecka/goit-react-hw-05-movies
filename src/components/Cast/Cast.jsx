@@ -8,9 +8,9 @@ export default function Cast() {
 
   useEffect(() => {
     fetch(
-      // eslint-disable-next-line
-      'https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=ce0c06de642193a801e7421c7d30b9dd'
+      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=ce0c06de642193a801e7421c7d30b9dd`
     )
+      // eslint-disable-next-line
       .then(res => res.json())
       .then(res => setMovieCredits(res.cast))
       .catch(error => console.error(error));
