@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Suspense } from 'react';
+import Layout from 'components/Layout/Layout';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Movies = lazy(() => import('./pages/Movies/Movies'));
@@ -12,14 +13,16 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Route exact path="/" element={Home} />
-          <Route exact path="/movies" element={Movies} />
-          <Route exact path="/movies/:movieId" element={MovieDetails} />
-          <Route exact path="/movies/:movieId/cast" element={Cast} />
-          <Route exact path="/movies/:movieId/reviews" component={Reviews} />
-          <Route path="*" />
-        </Suspense>
+        <Layout>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Route exact path="/" element={Home} />
+            <Route exact path="/movies" element={Movies} />
+            <Route exact path="/movies/:movieId" element={MovieDetails} />
+            <Route exact path="/movies/:movieId/cast" element={Cast} />
+            <Route exact path="/movies/:movieId/reviews" component={Reviews} />
+            <Route path="*" />
+          </Suspense>
+        </Layout>
       </div>
     </Router>
   );
