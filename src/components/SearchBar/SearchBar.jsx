@@ -1,42 +1,38 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import css from './SearchBar.module.css';
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState('');
+export default function SearchBar({ handleSearch }) {
+  const [isActive, setIsActive] = useState(false);
 
-  const handleChangeQuery = event => {
-    setQuery(event.target.value);
+  const handleFocus = () => {
+    setIsActive(true);
   };
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    if (query === '') {
-      return;
-    }
-    onSubmit(query);
-    setQuery('');
+  const handleBlur = () => {
+    setIsActive(false);
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
-        <button type="submit">
-          <span>Search</span>
-        </button>
-
+    <>
+      <div className={css.search_box}>
         <input
           type="text"
-          autocomplete="off"
-          autofocus
-          value={query}
-          onChange={handleChangeQuery}
+          className={css.search_input}
+          placeholder={isActive ? '' : 'Search for a movie...'}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onKeyUp={event => {
+            if (event.code === 'Enter') {
+              handleSearch(event.target.value);
+            }
+          }}
         />
-      </form>
-    </header>
+      </div>
+    </>
   );
-};
+}
 
 SearchBar.propTypes = {
-  onSubmit: PropTypes.func,
+  handleSearch: PropTypes.func.isRequired,
 };
-export default SearchBar;

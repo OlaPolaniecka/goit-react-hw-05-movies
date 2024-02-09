@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Suspense } from 'react';
 import Layout from 'components/Layout/Layout';
 
@@ -13,8 +13,8 @@ const App = () => {
   return (
     <div>
       <Layout />
-      <Routes>
-        <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path="/movies/:movieId" element={<MovieDetails />} />
@@ -25,8 +25,8 @@ const App = () => {
             component={<Reviews />}
           />
           <Route path="*" />
-        </Suspense>
-      </Routes>
+        </Routes>
+      </Suspense>
     </div>
   );
 };

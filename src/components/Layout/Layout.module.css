@@ -25,6 +25,10 @@
   text-transform: uppercase;
 }
 
-.menu_title:active {
-  color: #3831c3;
+.menu_title:hover {
+  color: #52a49f;
+}
+
+.active {
+  color: #52a49f;
 }
