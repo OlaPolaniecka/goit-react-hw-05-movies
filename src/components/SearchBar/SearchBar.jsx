@@ -15,7 +15,7 @@ export default function SearchBar({ handleSearch }) {
 
   return (
     <>
-      <div className={css.search_box}>
+      <div>
         <input
           type="text"
           className={css.search_input}

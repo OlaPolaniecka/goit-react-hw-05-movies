@@ -8,7 +8,7 @@ export default function MovieDetails() {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/?api_key=ce0c06de642193a801e7421c7d30b9dd`
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=ce0c06de642193a801e7421c7d30b9dd`
     )
       .then(res => res.json())
       .then(res => setMovieDetails(res))
@@ -24,7 +24,8 @@ export default function MovieDetails() {
           src={`https://image.tmdb.org/t/p/w500/${movieDetails.backdrop_path}`}
           alt={movieDetails.title}
           title={movieDetails.title}
-          width="600"
+          width="550"
+          height="350"
         />
         <h3 className={css.movie_subtitle}>Overview</h3>
         <p>{movieDetails.overview}</p>

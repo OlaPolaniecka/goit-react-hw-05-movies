@@ -18,7 +18,7 @@ export default function Cast() {
 
   return (
     <>
-      <div className={css.cast_container}>
+      <div>
         <ul className={css.cast_list}>
           {movieCredits.map(credit => (
             <li key={credit.id} className={css.cast_item}>
@@ -27,9 +27,9 @@ export default function Cast() {
                 className={css.cast_image}
                 alt={credit.name}
                 title={credit.name}
-                width="160"
+                width="220"
               />
-              <p className={css.cast_title}>{credit.name}</p>
+              <p>{credit.name}</p>
               <p className={css.cast_character}>
                 Character: {credit.character}
               </p>

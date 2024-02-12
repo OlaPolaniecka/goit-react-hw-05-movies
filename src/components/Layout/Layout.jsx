@@ -8,12 +8,18 @@ const Layout = ({ children }) => {
       <header className={css.menu}>
         <ul className={css.menu_list}>
           <li className={css.menu_item}>
-            <NavLink className={css.menu_title} to="/">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? 'home_active' : '')}
+            >
               Home
             </NavLink>
           </li>
           <li className={css.menu_item}>
-            <NavLink className={css.menu_title} to="/movies">
+            <NavLink
+              className={({ isActive }) => (isActive ? 'movie_active' : '')}
+              to="/movies"
+            >
               Movies
             </NavLink>
           </li>

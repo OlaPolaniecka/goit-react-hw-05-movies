@@ -1,0 +1,24 @@
+.review_list {
+  list-style: none;
+  margin: 60px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.review_item {
+  font-size: 20px;
+  border: 2px solid palevioletred;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+
+.review_author {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.review_content {
+  padding-left: 30px;
+  padding-right: 30px;
+}

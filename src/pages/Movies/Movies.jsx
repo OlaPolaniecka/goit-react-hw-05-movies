@@ -24,7 +24,7 @@ export default function Movies() {
 
   return (
     <>
-      <div className={css.movie_container}>
+      <div>
         <h1 className={css.movie_title}>Search movies</h1>
         {searchMovies.length === 0 ? (
           <SearchBar handleSearch={handleSearch} />

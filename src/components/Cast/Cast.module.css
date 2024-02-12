@@ -1,0 +1,16 @@
+.cast_list {
+  list-style: none;
+}
+
+.cast_item {
+  margin-top: 36px;
+  margin-left: 50px;
+}
+
+.cast_image {
+  border-radius: 6%;
+}
+
+.cast_character {
+  font-weight: bold;
+}
