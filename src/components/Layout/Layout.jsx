@@ -10,14 +10,14 @@ const Layout = ({ children }) => {
           <li className={css.menu_item}>
             <NavLink
               to="/"
-              className={({ isActive }) => (isActive ? 'home_active' : '')}
+              className={({ isActive }) => (isActive ? css.active : '')}
             >
               Home
             </NavLink>
           </li>
           <li className={css.menu_item}>
             <NavLink
-              className={({ isActive }) => (isActive ? 'movie_active' : '')}
+              className={({ isActive }) => (isActive ? css.active : '')}
               to="/movies"
             >
               Movies

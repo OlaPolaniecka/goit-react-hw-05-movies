@@ -7,7 +7,6 @@
   justify-content: center;
   align-items: center;
   height: 60px;
-  color: #fff;
   background-color: #611877;
 }
 
@@ -18,13 +17,17 @@
 }
 
 .menu_item {
-  color: #fff;
+  color: #ffffffb4;
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.home_active {
-  color: #cde3e2;
+.active {
+  color: #c2d1d1;
+}
+
+.isActive {
+  color: black;
 }
